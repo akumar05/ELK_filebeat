@@ -25,6 +25,21 @@ filebeat.prospectors:
   paths:
     - /root/airflow/logs/scheduler/*/*.log
   fields: {log_type: airflow_dags_log}
+  paths:
+    - /mnt/nfs/qa/logs/unpackdecrypt*_process.log
+  fields: {log_type: unpack_process_logs}
+  paths:
+    - /mnt/nfs/qa/logs/filewatcher*_process.log
+  fields: {log_type: filewatcher_process}
+  paths:
+    - /mnt/nfs/qa/logs/unpack_filewatcher*_process.log
+  fields: {log_type: unpackwatcher_process}
+  paths:
+    - /mnt/nfs/qa/logs/EBCDICToASCII*_process.log
+  fields: {log_type: ebcdictoascii_process}
+  paths:
+    - /mnt/nfs/qa/logs/preprocess_watcher*.log
+  fields: {log_type: preprocess_watcher}
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
   # matching any regular expression from the list.
   #exclude_lines: ['^DBG']
